@@ -539,6 +539,133 @@ th.pkg-compare-top{background:var(--grad);color:white!important}
 .pro-modal-list li{font-size:14px;color:var(--gray);line-height:1.6}
 .pro-modal-btns{display:flex;gap:12px;flex-wrap:wrap}
 .pro-modal-continue,.pro-modal-leave{flex:1 1 auto;justify-content:center;min-width:140px}
+
+/* =====================================================================
+   RESPONSIVE LAYER (systematické breakpointy — pouze zobrazení)
+   ===================================================================== */
+
+/* Globální ochrana proti horizontálnímu scrollu a přetékání */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+*,*::before,*::after{min-width:0}
+
+/* ---------- TABLET (<=1024px) ---------- */
+@media(max-width:1024px){
+  .container{padding-left:24px;padding-right:24px}
+  .benefits-grid{grid-template-columns:repeat(2,1fr)}
+  .wraps-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-layout.single-unit .price-card{grid-template-columns:1fr;gap:28px}
+  .price-card-img{max-width:320px;margin:0 auto}
+}
+
+/* ---------- MENŠÍ TABLET / VELKÝ TELEFON (<=860px): mobilní navigace ---------- */
+@media(max-width:860px){
+  .nav-inner{flex-wrap:wrap;height:auto;min-height:64px;padding-top:8px;padding-bottom:8px}
+  .nav-logo img{height:44px}
+  .mobile-menu-btn{display:flex}
+  .nav-links,.nav-right{display:none}
+  nav.mobile-open .nav-links{
+    display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+    order:3;flex-basis:100%;width:100%;padding:10px 0 4px;margin-top:6px;
+    border-top:1px solid var(--border)
+  }
+  nav.mobile-open .nav-links a{width:100%;padding:11px 8px;font-size:15px}
+  nav.mobile-open .nav-right{
+    display:flex;flex-direction:column;align-items:stretch;gap:12px;
+    order:4;flex-basis:100%;width:100%;padding:8px 0 6px
+  }
+  nav.mobile-open .lang-switcher{justify-content:flex-start}
+  nav.mobile-open .nav-cta-alt,
+  nav.mobile-open .nav-cta{text-align:center;padding:13px 20px;font-size:15px}
+  /* hamburger -> X */
+  nav.mobile-open .mobile-menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.mobile-open .mobile-menu-btn span:nth-child(2){opacity:0}
+  nav.mobile-open .mobile-menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu-btn span{transition:transform .2s,opacity .2s}
+}
+
+/* ---------- TELEFON (<=768px) ---------- */
+@media(max-width:768px){
+  section{padding:64px 1.25rem}
+  .benefits-grid{grid-template-columns:1fr;gap:14px}
+  .wraps-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
+  /* B2B balíčky pod sebe */
+  .pkg-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
+  .pkg-featured{order:-1}
+  /* porovnávací tabulka scrolluje uvnitř svého boxu */
+  .pkg-compare-wrap{width:100%;max-width:100%;-webkit-overflow-scrolling:touch}
+  /* audience bloky 1 sloupec */
+  .audience-content{grid-template-columns:1fr}
+  /* modaly: menší padding, scroll uvnitř */
+  .legal-box,.pro-modal-box{padding:28px 22px;max-height:86vh}
+  /* CTA páry pod sebe */
+  .hero-btns,.cta-btns,.price-ctas,.size-guide-help{flex-direction:column;align-items:stretch}
+  .hero-btns .btn-primary,.hero-btns .btn-dark,
+  .cta-btns a,.price-ctas a,.price-ctas button{width:100%;justify-content:center}
+}
+
+/* ---------- MENŠÍ TELEFON (<=600px) ---------- */
+@media(max-width:600px){
+  section{padding:56px 1.25rem}
+  .hero{padding-top:92px}
+  /* Typografie: nadpisy menší, dobře čitelné */
+  .hero h1{font-size:34px;line-height:1.08}
+  .sec-title{font-size:26px;line-height:1.15}
+  .hero-sub{font-size:16px;max-width:100%}
+  .sec-sub{font-size:15px}
+  /* hero metriky vedle sebe s menší mezerou, případně zalomení */
+  .hero-metrics{gap:16px;flex-wrap:wrap}
+  .metric{flex:1 1 auto}
+  .metric-val{font-size:22px}
+  /* gel a spec dlaždice 1 sloupec pro čitelnost */
+  .gel-imgs{grid-template-columns:1fr 1fr}
+  .mobility-specs{grid-template-columns:1fr 1fr;gap:12px}
+  .how-stats{grid-template-columns:1fr 1fr}
+  /* cuff picker */
+  .cuff-grid{grid-template-columns:repeat(2,1fr)}
+  /* footer do jednoho sloupce, sekce pod sebou */
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;text-align:left}
+  /* audience záložky: skupiny pod sebe, plná šířka */
+  .audience-tabs{flex-direction:column;align-items:stretch;gap:12px}
+  .aud-group{justify-content:flex-start;flex-wrap:wrap}
+  .audience-tab{flex:1 1 auto;text-align:center}
+  /* cookie banner na celou šířku spodku */
+  .cookie-banner{left:10px;right:10px;bottom:10px;padding:20px 18px}
+  .cookie-btns{flex-direction:column}
+  .cookie-btns button{width:100%}
+  /* modal tlačítka pod sebe */
+  .pro-modal-btns{flex-direction:column}
+  .pro-modal-continue,.pro-modal-leave{width:100%}
+  /* founder blok fotka nahoře */
+  .founder-block{padding:22px}
+  /* nabízené velikosti / size guide */
+  .size-guide-help{align-items:stretch}
+  .size-guide-help .btn-dark{width:100%;text-align:center;justify-content:center}
+}
+
+/* ---------- MALÝ TELEFON (<=414px) ---------- */
+@media(max-width:414px){
+  section{padding:48px 1rem}
+  .container{padding-left:16px;padding-right:16px}
+  .hero{padding-top:88px}
+  .hero h1{font-size:30px}
+  .sec-title{font-size:23px}
+  .metric-val{font-size:20px}
+  .hero-metrics{gap:12px}
+  .price-amount{font-size:38px}
+  .pkg-price{font-size:30px}
+  /* velké nadpisy sekcí v tmavých blocích */
+  .benefit-highlight{padding:40px 22px}
+  .benefit-highlight-title{font-size:24px}
+  .cta-title{font-size:30px}
+  /* modaly ještě těsnější */
+  .legal-box,.pro-modal-box{padding:24px 18px}
+  .pro-modal-title{font-size:21px}
+  /* jazykový přepínač: menší tlačítka aby se vešla v řádku v menu */
+  .lang-btn{padding:5px 8px;font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -2033,19 +2160,16 @@ function toggleFaq(btn) {
 }
 
 function toggleMobileMenu() {
-  const links = document.getElementById('navLinks');
-  const isVisible = links.style.display === 'flex';
-  links.style.display = isVisible ? '' : 'flex';
-  links.style.flexDirection = 'column';
-  links.style.position = 'absolute';
-  links.style.top = '68px';
-  links.style.left = '0';
-  links.style.right = '0';
-  links.style.background = 'white';
-  links.style.padding = '12px 2rem 20px';
-  links.style.borderBottom = '1px solid #E2E8F0';
-  links.style.zIndex = '199';
+  var nav = document.querySelector('nav');
+  if(nav) nav.classList.toggle('mobile-open');
 }
+// Zavři mobilní menu po kliknutí na odkaz v navigaci
+document.addEventListener('click', function(e){
+  var nav = document.querySelector('nav');
+  if(!nav || !nav.classList.contains('mobile-open')) return;
+  var a = e.target.closest('#navLinks a, .nav-right a');
+  if(a) nav.classList.remove('mobile-open');
+});
 
 
 // ===== SINGLE UNIT PRODUCT IMAGE =====
