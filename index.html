@@ -720,6 +720,50 @@ img,svg,video,canvas{max-width:100%}
 .provideo-section{background:var(--gray-light);border-top:1px solid var(--border)}
 .provideo-badge{display:inline-flex;align-items:center;gap:8px;background:var(--grad-subtle);border:1px solid rgba(29,103,205,.18);color:var(--blue);padding:7px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
 @media(max-width:600px){.vf-play{width:62px;height:62px}.vf-play svg{width:22px;height:22px}}
+
+/* ===== BALÍČEK NA MÍRU ===== */
+.cfg{max-width:920px;margin:0 auto;background:white;border:1px solid var(--border);border-radius:24px;padding:36px 40px;box-shadow:0 10px 40px rgba(13,17,23,.05)}
+.cfg-progress{height:4px;background:var(--gray-light);border-radius:4px;overflow:hidden}
+.cfg-bar{height:100%;width:0;background:var(--grad);border-radius:4px;transition:width .4s ease}
+.cfg-step-meta{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-mid);margin:14px 0 22px}
+.cfg-tag{display:inline-block;background:var(--grad-subtle);border:1px solid rgba(29,103,205,.15);color:var(--blue);padding:5px 12px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:14px}
+.cfg-q{font-family:var(--display);font-size:clamp(22px,2.6vw,30px);font-weight:700;color:var(--dark);letter-spacing:-.02em;line-height:1.2;margin-bottom:8px}
+.cfg-hint{font-size:13.5px;color:var(--gray-mid);margin-bottom:20px}
+.cfg-segs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.cfg-seg{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:24px 22px;border:1.5px solid var(--border);border-radius:16px;background:white;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.cfg-seg strong{font-family:var(--display);font-size:18px;color:var(--dark)}
+.cfg-seg span{font-size:13px;color:var(--gray);line-height:1.5}
+.cfg-seg:hover,.cfg-opt:hover{border-color:var(--blue)}
+.cfg-seg.selected,.cfg-opt.selected{border-color:var(--blue);background:var(--grad-subtle);box-shadow:0 4px 14px rgba(29,103,205,.12)}
+.cfg-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.cfg-opt{position:relative;text-align:left;padding:15px 40px 15px 16px;border:1.5px solid var(--border);border-radius:14px;background:white;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--dark);transition:all .2s;line-height:1.35}
+.cfg-opt::after{content:'';position:absolute;right:14px;top:50%;width:16px;height:16px;margin-top:-8px;border:1.5px solid var(--border);border-radius:50%;background:white}
+.cfg-opt.multi::after{border-radius:4px}
+.cfg-opt.selected::after{content:'✓';background:var(--blue);border-color:var(--blue);color:white;font-size:10px;display:flex;align-items:center;justify-content:center}
+.cfg-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px;padding-top:24px;border-top:1px solid var(--border)}
+.cfg-nav #cfgNext{margin-left:auto}
+.cfg-nav button[disabled]{opacity:.4;cursor:not-allowed;box-shadow:none}
+.cfg-contact{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-top:20px;align-items:start}
+.cfg-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cfg-fields .nf-field span{font-size:12.5px;font-weight:600;color:var(--gray)}
+.cfg-fields .nf-field input,.cfg-fields .nf-field textarea{background:white;border:1.5px solid var(--border);border-radius:10px;padding:11px 13px;font-family:var(--sans);font-size:14px;color:var(--dark)}
+.cfg-fields .nf-field input:focus,.cfg-fields .nf-field textarea:focus{outline:none;border-color:var(--blue)}
+.cfg-consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--gray);line-height:1.5;margin-top:4px}
+.cfg-consent input{width:18px;height:18px;margin-top:1px;flex-shrink:0;accent-color:var(--blue)}
+.cfg-consent a{color:var(--blue);text-decoration:underline}
+.cfg-err{grid-column:1/-1;display:none;color:#c0392b;font-size:13px}
+.cfg-summary{background:var(--gray-light);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+.cfg-summary-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-mid);margin-bottom:10px}
+.cfg-summary ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cfg-summary li{display:flex;flex-direction:column;gap:2px;font-size:12.5px;color:var(--gray-mid);padding-bottom:10px;border-bottom:1px solid var(--border)}
+.cfg-summary li:last-child{border-bottom:0;padding-bottom:0}
+.cfg-summary li strong{font-size:13.5px;color:var(--dark);font-weight:600}
+.cfg-thanks{text-align:center;padding:20px 10px}
+.cfg-thanks h3{font-family:var(--display);font-size:26px;font-weight:700;color:var(--dark);margin-bottom:10px}
+.cfg-thanks p{font-size:15px;color:var(--gray);line-height:1.7;max-width:520px;margin:0 auto}
+@media(max-width:820px){.cfg-segs{grid-template-columns:1fr}.cfg-contact{grid-template-columns:1fr}}
+@media(max-width:600px){.cfg{padding:24px 18px;border-radius:18px}.cfg-fields{grid-template-columns:1fr}.cfg-opts{grid-template-columns:1fr}.cfg-nav .btn-primary,.cfg-nav .btn-outline{padding:13px 18px}}
+
 </style>
 </head>
 <body>
@@ -1046,8 +1090,8 @@ img,svg,video,canvas{max-width:100%}
   <div class="container">
     <div class="reveal" style="margin-bottom:0">
       <div class="sec-label" data-i18n="price_label">Cena a konfigurace</div>
-      <h2 class="sec-title" data-i18n="price_title">Starter Pack &mdash; jedna jednotka, 3 manžety dle výběru</h2>
-      <p class="sec-sub" data-i18n="price_sub">Ideální na vyzkoušení Squid Go, než rozšíříte portfolio. Pro nerozhodnuté.</p>
+      <h2 class="sec-title" data-i18n="price_title">Squid Go &mdash; jedna jednotka, jedna manžeta dle výběru</h2>
+      <p class="sec-sub" data-i18n="price_sub">Jednotná cena 25 000 Kč včetně DPH: pumpa Squid Go, 1 anatomická manžeta a 1 gel pack.</p>
     </div>
 
     <div class="pricing-layout single-unit reveal d1">
@@ -1061,10 +1105,10 @@ img,svg,video,canvas{max-width:100%}
           </div>
         </div>
         <div>
-          <div class="price-eyebrow" data-i18n="price_eyebrow">Starter Pack</div>
-          <h3 class="price-product-name" data-i18n="price_unit_name">Starter Pack</h3>
+          <div class="price-eyebrow" data-i18n="price_eyebrow">Jednotná cena</div>
+          <h3 class="price-product-name" data-i18n="price_unit_name">Squid Go</h3>
 
-          <div class="price-amount">35 000 Kč</div>
+          <div class="price-amount">25 000 Kč</div>
           <p class="price-vat-note" data-i18n="price_vat_label_incl">cena včetně DPH</p>
 
           <div class="price-trust">
@@ -1077,23 +1121,23 @@ img,svg,video,canvas{max-width:100%}
 
           <div class="price-contents-label" data-i18n="price_contents_label">Cena zahrnuje</div>
           <ul class="check-list">
-            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item1">1× jednotka Squid Go</span></li>
-            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item2">3× anatomická manžeta dle výběru</span></li>
-            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item3">3× gel pack k vybraným manžetám</span></li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item1">1× pumpa Squid Go</span></li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item2">1× anatomická manžeta dle výběru</span></li>
+            <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item3">1× gel pack k vybrané manžetě</span></li>
             <li><span class="check-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span data-i18n="price_item4">Nabíječka a připojovací hadice</span></li>
           </ul>
 
-          <!-- VÝBĚR 3 MANŽET -->
+          <!-- VÝBĚR 1 MANŽETY -->
           <div class="cuff-picker">
             <div class="cuff-picker-head">
-              <h4 data-i18n="cuff_title">Vyberte si 3 manžety</h4>
-              <span class="cuff-counter" id="cuff-counter"><span data-i18n="cuff_selected">Vybráno</span>: <strong id="cuff-count">0</strong> / 3</span>
+              <h4 data-i18n="cuff_title">Vyberte si manžetu</h4>
+              <span class="cuff-counter" id="cuff-counter"><span data-i18n="cuff_selected">Vybráno</span>: <strong id="cuff-count">0</strong> / 1</span>
             </div>
             <div class="cuff-grid" id="cuff-grid"></div>
             <div class="cuff-summary" id="cuff-summary" hidden>
               <div class="cuff-summary-label" data-i18n="cuff_summary_label">Vaše sestava</div>
               <ul class="cuff-summary-list" id="cuff-summary-list"></ul>
-              <div class="cuff-summary-price">35 000 Kč</div>
+              <div class="cuff-summary-price">25 000 Kč</div>
             </div>
             <div class="cuff-video" id="cuff-video" hidden></div>
           </div>
@@ -1122,75 +1166,21 @@ img,svg,video,canvas{max-width:100%}
       </div>
     </div>
 
-    <!-- B2B BALÍČKY -->
+    <!-- BALÍČEK NA MÍRU (konfigurátor poptávky) -->
     <div class="b2b-block reveal" id="b2b">
       <div class="b2b-head">
-        <div class="sec-label" data-i18n="b2b_label">Pro kliniky a týmy</div>
-        <h2 class="sec-title" data-i18n="b2b_title">Balíčky pro ordinace a organizace</h2>
-        <p class="sec-sub" data-i18n="b2b_sub">Vybavte celé pracoviště za zvýhodněných podmínek. Všechny ceny jsou uvedeny včetně DPH.</p>
+        <div class="sec-label" data-i18n="b2b_label">Pro kluby, nemocnice a kliniky</div>
+        <h2 class="sec-title" data-i18n="b2b_title">Balíček na míru</h2>
+        <p class="sec-sub" data-i18n="b2b_sub">Potřebujete více jednotek? Odpovězte na 7 krátkých otázek a připravíme vám balíček přesně pro vaše pracoviště.</p>
       </div>
-
-      <div class="pkg-grid">
-        <div class="pkg-card">
-          <div class="pkg-name" data-i18n="pkg_start_name">START</div>
-          <div class="pkg-units"><span data-i18n="pkg_start_units">3× Squid Go</span></div>
-          <div class="pkg-price">66 000 Kč</div>
-          <div class="pkg-vat" data-i18n="pkg_vat">s DPH</div>
-          <p class="pkg-for" data-i18n="pkg_start_for">Pro menší ordinace a kliniky</p>
-          <ul class="pkg-list">
-            <li class="pkg-li-off"><span data-i18n="pkg_bag">Termoregulační batoh</span><span class="pkg-x">—</span></li>
-            <li class="pkg-li-off"><span data-i18n="pkg_freezer">Přenosný mobilní mrazák</span><span class="pkg-x">—</span></li>
-          </ul>
-          <a href="mailto:jan.tichy_ext@aspironix.com?subject=Squid%20Go%20-%20balicek%20START" class="btn-outline pkg-cta" data-i18n="pkg_start_cta">Chci START</a>
+      <div class="cfg" id="cfg">
+        <div class="cfg-progress"><div class="cfg-bar" id="cfgBar"></div></div>
+        <div class="cfg-step-meta" id="cfgMeta"></div>
+        <div class="cfg-body" id="cfgBody"></div>
+        <div class="cfg-nav">
+          <button type="button" class="btn-outline" id="cfgBack">Zpět</button>
+          <button type="button" class="btn-primary" id="cfgNext">Pokračovat</button>
         </div>
-
-        <div class="pkg-card">
-          <div class="pkg-name" data-i18n="pkg_top_name">TOP</div>
-          <div class="pkg-units"><span data-i18n="pkg_top_units">5× Squid Go</span></div>
-          <div class="pkg-price">110 000 Kč</div>
-          <div class="pkg-vat" data-i18n="pkg_vat">s DPH</div>
-          <ul class="pkg-list">
-            <li class="pkg-li-on"><span class="pkg-check">✓</span><span data-i18n="pkg_bag_free">Termoregulační batoh ZDARMA</span></li>
-            <li class="pkg-li-off"><span data-i18n="pkg_freezer">Přenosný mobilní mrazák</span><span class="pkg-x">—</span></li>
-          </ul>
-          <a href="mailto:jan.tichy_ext@aspironix.com?subject=Squid%20Go%20-%20balicek%20TOP" class="btn-outline pkg-cta" data-i18n="pkg_top_cta">Chci TOP</a>
-        </div>
-
-        <div class="pkg-card pkg-featured">
-          <div class="pkg-badge" data-i18n="pkg_top_badge">NEJOBLÍBENĚJŠÍ</div>
-          <div class="pkg-name" data-i18n="pkg_vip_name">VIP</div>
-          <div class="pkg-units"><span data-i18n="pkg_vip_units">7× Squid Go</span></div>
-          <div class="pkg-price">150 000 Kč</div>
-          <div class="pkg-vat" data-i18n="pkg_vat">s DPH</div>
-          <p class="pkg-for" data-i18n="pkg_vip_for">Pro rehabilitační centra a profesionální týmy</p>
-          <ul class="pkg-list">
-            <li class="pkg-li-on"><span class="pkg-check">✓</span><span data-i18n="pkg_vip_parts">7 anatomických manžet</span></li>
-            <li class="pkg-li-on"><span class="pkg-check">✓</span><span data-i18n="pkg_vip_gels">14× gel pack</span></li>
-            <li class="pkg-li-on"><span class="pkg-check">✓</span><span data-i18n="pkg_bag_free">Termoregulační batoh ZDARMA</span></li>
-            <li class="pkg-li-on"><span class="pkg-check">✓</span><span data-i18n="pkg_freezer_free">Přenosný mobilní mrazák ZDARMA</span></li>
-          </ul>
-          <a href="mailto:jan.tichy_ext@aspironix.com?subject=Squid%20Go%20-%20balicek%20VIP" class="btn-primary pkg-cta" data-i18n="pkg_vip_cta">Chci VIP</a>
-        </div>
-      </div>
-
-      <!-- POROVNÁNÍ BALÍČKŮ -->
-      <div class="pkg-compare-wrap">
-        <table class="pkg-compare">
-          <thead>
-            <tr>
-              <th></th>
-              <th>START</th>
-              <th>TOP</th>
-              <th class="pkg-compare-top">VIP<span class="pkg-compare-badge" data-i18n="pkg_top_badge">NEJOBLÍBENĚJŠÍ</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td data-i18n="cmp_units">Squid Go jednotky</td><td>3</td><td>5</td><td class="pkg-compare-top">7</td></tr>
-            <tr><td data-i18n="cmp_price">Cena s DPH</td><td>66 000 Kč</td><td>110 000 Kč</td><td class="pkg-compare-top">150 000 Kč</td></tr>
-            <tr><td data-i18n="cmp_bag">Termoregulační batoh</td><td>—</td><td data-i18n="cmp_free">ZDARMA</td><td class="pkg-compare-top" data-i18n="cmp_free">ZDARMA</td></tr>
-            <tr><td data-i18n="cmp_freezer">Přenosný mobilní mrazák</td><td>—</td><td>—</td><td class="pkg-compare-top" data-i18n="cmp_free">ZDARMA</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
@@ -1859,15 +1849,15 @@ var LANG_EXTRA = {
     cp_badge:"Pouze pro odborníky", cp_title:"Clinical papers", cp_sub:"Odborné abstrakty a video o principu fungování systému.", cp_card_title:"Jak Squid Go funguje", cp_download:"Stáhnout Clinical papers (PDF)",
     video_label:"Video", video_title:"Podívejte se, jak Squid Go funguje", video_sub:"Krátké video (1,5 min) ukazuje produkt a jeho použití.", video_card_title:"Squid Go — představení produktu", video_privacy:"Video se otevře na YouTube v nové záložce.", provideo_badge:"Pouze pro odborníky", provideo_title:"Odborný rozbor Squid Go", provideo_sub:"Fyzioterapeut Dr. Ryley Rodrigues, PT, představuje a rozbaluje Squid Go.", provideo_card_title:"Dr. Ryley Rodrigues, PT — unboxing Squid Go",
     hero_device_note:"Squid Go je zdravotnický prostředek třídy I. Před použitím se seznamte s návodem k použití a informacemi o bezpečném používání.", aud_group_public:"Veřejnost", aud_group_pro:"Odborníci", pro_gate_text:"Tato část webu je určena pouze odborným pracovníkům ve zdravotnictví.", pro_gate_btn:"Zobrazit odborný obsah", pro_modal_title:"Jste odborný pracovník ve zdravotnictví?", pro_modal_lead1:"Následující stránky jsou určeny pouze pro odborné pracovníky ve zdravotnictví.", pro_modal_lead2:"Kliknutím na tlačítko „Pokračovat\" výslovně prohlašuji a potvrzuji, že:", pro_modal_p1:"jsem odborníkem ve smyslu § 2a Zákona o regulaci reklamy ve znění pozdějších předpisů, tedy osobou oprávněnou léčivé přípravky vydávat či předepisovat nebo poskytovat zdravotní péči;", pro_modal_p2:"jsem se seznámil/a s definicí odborníka uvedenou v předchozím bodu.", pro_modal_continue:"Pokračovat", pro_modal_leave:"Odejít",
-    price_label:"Cena a konfigurace", price_title:"Starter Pack &mdash; jedna jednotka, 3 manžety dle výběru", price_sub:"Ideální na vyzkoušení Squid Go, než rozšíříte portfolio. Pro nerozhodnuté.",
-    price_unit_name:"Starter Pack", price_eyebrow:"Starter Pack", price_contents_label:"Cena zahrnuje",
-    price_item1:"1× jednotka Squid Go", price_item2:"3× anatomická manžeta dle výběru", price_item3:"3× gel pack k vybraným manžetám", price_item4:"Nabíječka a připojovací hadice",
+    price_label:"Cena a konfigurace", price_title:"Squid Go &mdash; jedna jednotka, jedna manžeta dle výběru", price_sub:"Jednotná cena 25 000 Kč včetně DPH: pumpa Squid Go, 1 anatomická manžeta a 1 gel pack.",
+    price_unit_name:"Squid Go", price_eyebrow:"Jednotná cena", price_contents_label:"Cena zahrnuje",
+    price_item1:"1× pumpa Squid Go", price_item2:"1× anatomická manžeta dle výběru", price_item3:"1× gel pack k vybrané manžetě", price_item4:"Nabíječka a připojovací hadice",
     price_cta_offer:"Nechat si připravit nabídku", price_cta_demo:"Domluvit demo",
     price_vat_label_incl:"cena včetně DPH", tp_reviews_link:"Číst recenze \u2192",
     price_vat_disclaimer:"Sportovci a koncoví zákazníci obvykle nakupují včetně DPH. Fyzioterapeuti, kliniky a sportovní organizace mohou nakupovat na IČO.",
-    cuff_title:"Vyberte si 3 manžety", cuff_selected:"Vybráno", cuff_summary_label:"Vaše sestava",
+    cuff_title:"Vyberte si manžetu", cuff_selected:"Vybráno", cuff_summary_label:"Vaše sestava",
     founder_label:"Kdo za distribucí stojí", founder_name:"Jan Tichý", founder_role:"Student Bostonské univerzity · zakladatel projektu", founder_p1:"Po vlastní operaci páteře v Bostonu Jan poznal, jak důležitou roli může Squid Go hrát v pooperační péči a rehabilitaci. Sám technologii využíval během svého zotavování a na vlastní zkušenosti poznal její přínos. Právě to ho motivovalo podílet se na zpřístupnění této inovativní technologie dalším pacientům, a to jak v rámci pooperační péče, tak v oblasti prevence.", founder_p2:"Díky spolupráci s manažerem Jiřím Pavlíčkem a jeho kontaktům se podařilo přivést Squid Go do střední Evropy a zahájit jeho distribuci. Společným cílem je zpřístupnit tuto technologii fyzioterapeutům, zdravotnickým zařízením a sportovním týmům v Česku i dalších zemích střední Evropy.",
-    b2b_label:"Pro kliniky a týmy", b2b_title:"Balíčky pro ordinace a organizace", b2b_sub:"Vybavte celé pracoviště za zvýhodněných podmínek. Všechny ceny jsou uvedeny včetně DPH.",
+    b2b_label:"Pro kluby, nemocnice a kliniky", b2b_title:"Balíček na míru", b2b_sub:"Potřebujete více jednotek? Odpovězte na 7 krátkých otázek a připravíme vám balíček přesně pro vaše pracoviště.",
     pkg_start_name:"START", pkg_start_units:"3× Squid Go", pkg_start_for:"Pro menší ordinace a kliniky", pkg_start_cta:"Chci START",
     pkg_top_name:"TOP", pkg_top_units:"5× Squid Go", pkg_top_badge:"NEJOBLÍBENĚJŠÍ", pkg_top_cta:"Chci TOP",
     pkg_vip_name:"VIP", pkg_vip_units:"7× Squid Go", pkg_vip_parts:"7 anatomických manžet", pkg_vip_gels:"14× gel pack", pkg_vip_for:"Pro rehabilitační centra a profesionální týmy", pkg_vip_cta:"Chci VIP",
@@ -1895,15 +1885,15 @@ var LANG_EXTRA = {
     cp_badge:"Iba pre odborníkov", cp_title:"Clinical papers", cp_sub:"Odborné abstrakty a video o princípe fungovania systému.", cp_card_title:"Ako Squid Go funguje", cp_download:"Stiahnuť Clinical papers (PDF)",
     video_label:"Video", video_title:"Pozrite sa, ako Squid Go funguje", video_sub:"Krátke video (1,5 min) ukazuje produkt a jeho použitie.", video_card_title:"Squid Go — predstavenie produktu", video_privacy:"Video sa otvorí na YouTube v novej záložke.", provideo_badge:"Iba pre odborníkov", provideo_title:"Odborný rozbor Squid Go", provideo_sub:"Fyzioterapeut Dr. Ryley Rodrigues, PT, predstavuje a rozbaľuje Squid Go.", provideo_card_title:"Dr. Ryley Rodrigues, PT — unboxing Squid Go",
     hero_device_note:"Squid Go je zdravotnícka pomôcka triedy I. Pred použitím sa oboznámte s návodom na použitie a informáciami o bezpečnom používaní.", aud_group_public:"Verejnosť", aud_group_pro:"Odborníci", pro_gate_text:"Táto časť webu je určená iba odborným pracovníkom v zdravotníctve.", pro_gate_btn:"Zobraziť odborný obsah", pro_modal_title:"Ste odborný pracovník v zdravotníctve?", pro_modal_lead1:"Nasledujúce stránky sú určené iba pre odborných pracovníkov v zdravotníctve.", pro_modal_lead2:"Kliknutím na tlačidlo „Pokračovať\" výslovne vyhlasujem a potvrdzujem, že:", pro_modal_p1:"som odborníkom v zmysle príslušných právnych predpisov o regulácii reklamy, teda osobou oprávnenou vydávať či predpisovať lieky alebo poskytovať zdravotnú starostlivosť;", pro_modal_p2:"oboznámil/a som sa s definíciou odborníka uvedenou v predchádzajúcom bode.", pro_modal_continue:"Pokračovať", pro_modal_leave:"Odísť",
-    price_label:"Cena a konfigurácia", price_title:"Starter Pack &mdash; jedna jednotka, 3 manžety podľa výberu", price_sub:"Ideálne na vyskúšanie Squid Go, než rozšírite portfólio. Pre nerozhodnutých.",
-    price_unit_name:"Starter Pack", price_eyebrow:"Starter Pack", price_contents_label:"Cena zahŕňa",
-    price_item1:"1× jednotka Squid Go", price_item2:"3× anatomická manžeta podľa výberu", price_item3:"3× gel pack k vybraným manžetám", price_item4:"Nabíjačka a pripojovacia hadica",
+    price_label:"Cena a konfigurácia", price_title:"Squid Go &mdash; jedna jednotka, jedna manžeta podľa výberu", price_sub:"Jednotná cena 25 000 Kč vrátane DPH: pumpa Squid Go, 1 anatomická manžeta a 1 gel pack.",
+    price_unit_name:"Squid Go", price_eyebrow:"Jednotná cena", price_contents_label:"Cena zahŕňa",
+    price_item1:"1× pumpa Squid Go", price_item2:"1× anatomická manžeta podľa výberu", price_item3:"1× gel pack k vybranej manžete", price_item4:"Nabíjačka a pripojovacia hadica",
     price_cta_offer:"Nechať si pripraviť ponuku", price_cta_demo:"Dohodnúť demo",
     price_vat_label_incl:"cena vrátane DPH", tp_reviews_link:"Čítať recenzie \u2192",
     price_vat_disclaimer:"Športovci a koncoví zákazníci obvykle nakupujú vrátane DPH. Fyzioterapeuti, kliniky a športové organizácie môžu nakupovať na IČO.",
-    cuff_title:"Vyberte si 3 manžety", cuff_selected:"Vybrané", cuff_summary_label:"Vaša zostava",
+    cuff_title:"Vyberte si manžetu", cuff_selected:"Vybrané", cuff_summary_label:"Vaša zostava",
     founder_label:"Kto za distribúciou stojí", founder_name:"Jan Tichý", founder_role:"Študent Bostonskej univerzity · zakladateľ projektu", founder_p1:"Po vlastnej operácii chrbtice v Bostone Jan spoznal, akú dôležitú rolu môže Squid Go zohrávať v pooperačnej starostlivosti a rehabilitácii. Technológiu sám využíval počas svojho zotavovania a na vlastnej skúsenosti spoznal jej prínos. Práve to ho motivovalo podieľať sa na sprístupnení tejto inovatívnej technológie ďalším pacientom, a to ako v rámci pooperačnej starostlivosti, tak aj v oblasti prevencie.", founder_p2:"Vďaka spolupráci s manažérom Jiřím Pavlíčkom a jeho kontaktom sa podarilo priviesť Squid Go do strednej Európy a spustiť jeho distribúciu. Spoločným cieľom je sprístupniť túto technológiu fyzioterapeutom, zdravotníckym zariadeniam a športovým tímom v Česku aj ďalších krajinách strednej Európy.",
-    b2b_label:"Pre kliniky a tímy", b2b_title:"Balíčky pre ambulancie a organizácie", b2b_sub:"Vybavte celé pracovisko za zvýhodnených podmienok. Všetky ceny sú uvedené vrátane DPH.",
+    b2b_label:"Pre kluby, nemocnice a kliniky", b2b_title:"Balíček na mieru", b2b_sub:"Potrebujete viac jednotiek? Odpovedzte na 7 krátkych otázok a pripravíme vám balíček presne pre vaše pracovisko.",
     pkg_start_name:"START", pkg_start_units:"3× Squid Go", pkg_start_for:"Pre menšie ambulancie a kliniky", pkg_start_cta:"Chcem START",
     pkg_top_name:"TOP", pkg_top_units:"5× Squid Go", pkg_top_badge:"NAJOBĽÚBENEJŠÍ", pkg_top_cta:"Chcem TOP",
     pkg_vip_name:"VIP", pkg_vip_units:"7× Squid Go", pkg_vip_parts:"7 anatomických manžet", pkg_vip_gels:"14× gel pack", pkg_vip_for:"Pre rehabilitačné centrá a profesionálne tímy", pkg_vip_cta:"Chcem VIP",
@@ -1931,15 +1921,15 @@ var LANG_EXTRA = {
     cp_badge:"Tylko dla specjalistów", cp_title:"Clinical papers", cp_sub:"Eksperckie abstrakty i wideo o zasadzie działania systemu.", cp_card_title:"Jak działa Squid Go", cp_download:"Pobierz Clinical papers (PDF)",
     video_label:"Wideo", video_title:"Zobacz, jak działa Squid Go", video_sub:"Krótkie wideo (1,5 min) pokazuje produkt i jego użycie.", video_card_title:"Squid Go — prezentacja produktu", video_privacy:"Wideo otworzy się na YouTube w nowej karcie.", provideo_badge:"Tylko dla specjalistów", provideo_title:"Analiza ekspercka Squid Go", provideo_sub:"Fizjoterapeuta Dr Ryley Rodrigues, PT, prezentuje i rozpakowuje Squid Go.", provideo_card_title:"Dr Ryley Rodrigues, PT — unboxing Squid Go",
     hero_device_note:"Squid Go jest wyrobem medycznym klasy I. Przed użyciem zapoznaj się z instrukcją użytkowania i informacjami o bezpiecznym stosowaniu.", aud_group_public:"Publiczność", aud_group_pro:"Specjaliści", pro_gate_text:"Ta część serwisu jest przeznaczona wyłącznie dla pracowników ochrony zdrowia.", pro_gate_btn:"Pokaż treści dla specjalistów", pro_modal_title:"Czy jesteś pracownikiem ochrony zdrowia?", pro_modal_lead1:"Poniższe strony są przeznaczone wyłącznie dla pracowników ochrony zdrowia.", pro_modal_lead2:"Klikając przycisk „Kontynuuj\", wyraźnie oświadczam i potwierdzam, że:", pro_modal_p1:"jestem specjalistą w rozumieniu właściwych przepisów o reklamie, czyli osobą uprawnioną do wydawania lub przepisywania produktów leczniczych albo udzielania świadczeń zdrowotnych;", pro_modal_p2:"zapoznałem/am się z definicją specjalisty podaną w poprzednim punkcie.", pro_modal_continue:"Kontynuuj", pro_modal_leave:"Wyjdź",
-    price_label:"Cena i konfiguracja", price_title:"Starter Pack &mdash; jedna jednostka, 3 opaski do wyboru", price_sub:"Idealny do wypróbowania Squid Go przed rozszerzeniem portfolia. Dla niezdecydowanych.",
-    price_unit_name:"Starter Pack", price_eyebrow:"Starter Pack", price_contents_label:"Cena obejmuje",
-    price_item1:"1× jednostka Squid Go", price_item2:"3× opaska anatomiczna do wyboru", price_item3:"3× wkład żelowy do wybranych opasek", price_item4:"Ładowarka i wąż połączeniowy",
+    price_label:"Cena i konfiguracja", price_title:"Squid Go &mdash; jedna jednostka, jedna opaska do wyboru", price_sub:"Jedna cena 25 000 Kč z VAT: pompa Squid Go, 1 opaska anatomiczna i 1 wkład żelowy.",
+    price_unit_name:"Squid Go", price_eyebrow:"Jedna cena", price_contents_label:"Cena obejmuje",
+    price_item1:"1× pompa Squid Go", price_item2:"1× opaska anatomiczna do wyboru", price_item3:"1× wkład żelowy do wybranej opaski", price_item4:"Ładowarka i wąż połączeniowy",
     price_cta_offer:"Poproś o ofertę", price_cta_demo:"Umów demo",
     price_vat_label_incl:"cena z VAT", tp_reviews_link:"Czytaj opinie \u2192",
     price_vat_disclaimer:"Sportowcy i klienci końcowi zwykle kupują z VAT. Fizjoterapeuci, kliniki i organizacje sportowe mogą kupować na firmę.",
-    cuff_title:"Wybierz 3 opaski", cuff_selected:"Wybrano", cuff_summary_label:"Twój zestaw",
+    cuff_title:"Wybierz opaskę", cuff_selected:"Wybrano", cuff_summary_label:"Twój zestaw",
     founder_label:"Kto stoi za dystrybucją", founder_name:"Jan Tichý", founder_role:"Student Uniwersytetu Bostońskiego · założyciel projektu", founder_p1:"Po własnej operacji kręgosłupa w Bostonie Jan przekonał się, jak ważną rolę Squid Go może odgrywać w opiece pooperacyjnej i rehabilitacji. Sam korzystał z tej technologii podczas rekonwalescencji i na własnym doświadczeniu poznał jej korzyści. To właśnie zmotywowało go, by włączyć się w udostępnianie tej innowacyjnej technologii kolejnym pacjentom — zarówno w ramach opieki pooperacyjnej, jak i profilaktyki.", founder_p2:"Dzięki współpracy z menedżerem Jiřím Pavlíčkiem i jego kontaktom udało się sprowadzić Squid Go do Europy Środkowej i rozpocząć jego dystrybucję. Wspólnym celem jest udostępnienie tej technologii fizjoterapeutom, placówkom medycznym i zespołom sportowym w Czechach oraz innych krajach Europy Środkowej.",
-    b2b_label:"Dla klinik i drużyn", b2b_title:"Pakiety dla gabinetów i organizacji", b2b_sub:"Wyposaż całą placówkę na preferencyjnych warunkach. Wszystkie ceny zawierają VAT.",
+    b2b_label:"Dla klubów, szpitali i klinik", b2b_title:"Pakiet na miarę", b2b_sub:"Potrzebujesz więcej jednostek? Odpowiedz na 7 krótkich pytań, a przygotujemy pakiet dopasowany do Twojej placówki.",
     pkg_start_name:"START", pkg_start_units:"3× Squid Go", pkg_start_for:"Dla mniejszych gabinetów i klinik", pkg_start_cta:"Wybieram START",
     pkg_top_name:"TOP", pkg_top_units:"5× Squid Go", pkg_top_badge:"NAJPOPULARNIEJSZY", pkg_top_cta:"Wybieram TOP",
     pkg_vip_name:"VIP", pkg_vip_units:"7× Squid Go", pkg_vip_parts:"7 opasek anatomicznych", pkg_vip_gels:"14× wkład żelowy", pkg_vip_for:"Dla centrów rehabilitacji i profesjonalnych drużyn", pkg_vip_cta:"Wybieram VIP",
@@ -1967,15 +1957,15 @@ var LANG_EXTRA = {
     cp_badge:"Healthcare professionals only", cp_title:"Clinical papers", cp_sub:"Professional abstracts and a video on how the system works.", cp_card_title:"How Squid Go works", cp_download:"Download Clinical papers (PDF)",
     video_label:"Video", video_title:"See how Squid Go works", video_sub:"A short video (1.5 min) shows the product and how it is used.", video_card_title:"Squid Go — product overview", video_privacy:"The video opens on YouTube in a new tab.", provideo_badge:"Healthcare professionals only", provideo_title:"Professional review of Squid Go", provideo_sub:"Physiotherapist Dr. Ryley Rodrigues, PT, presents and unboxes Squid Go.", provideo_card_title:"Dr. Ryley Rodrigues, PT — Squid Go unboxing",
     hero_device_note:"Squid Go is a Class I medical device. Before use, read the instructions for use and safe-use information.", aud_group_public:"Public", aud_group_pro:"Professionals", pro_gate_text:"This part of the site is intended for healthcare professionals only.", pro_gate_btn:"View professional content", pro_modal_title:"Are you a healthcare professional?", pro_modal_lead1:"The following pages are intended for healthcare professionals only.", pro_modal_lead2:"By clicking „Continue\" I expressly declare and confirm that:", pro_modal_p1:"I am a professional within the meaning of the applicable advertising-regulation legislation, i.e. a person authorised to dispense or prescribe medicinal products or to provide healthcare;", pro_modal_p2:"I have read the definition of a professional set out in the previous point.", pro_modal_continue:"Continue", pro_modal_leave:"Leave",
-    price_label:"Price & configuration", price_title:"Starter Pack &mdash; one unit, 3 wraps of your choice", price_sub:"Ideal for trying Squid Go before expanding your portfolio. For the undecided.",
-    price_unit_name:"Starter Pack", price_eyebrow:"Starter Pack", price_contents_label:"Price includes",
-    price_item1:"1× Squid Go unit", price_item2:"3× anatomical wrap of your choice", price_item3:"3× gel pack for the selected wraps", price_item4:"Charger and connection hose",
+    price_label:"Price & configuration", price_title:"Squid Go &mdash; one unit, one wrap of your choice", price_sub:"One price of 25 000 Kč incl. VAT: Squid Go pump, 1 anatomical wrap and 1 gel pack.",
+    price_unit_name:"Squid Go", price_eyebrow:"One price", price_contents_label:"Price includes",
+    price_item1:"1× Squid Go pump", price_item2:"1× anatomical wrap of your choice", price_item3:"1× gel pack for the selected wrap", price_item4:"Charger and connection hose",
     price_cta_offer:"Request a quote", price_cta_demo:"Book a demo",
     price_vat_label_incl:"price incl. VAT", tp_reviews_link:"Read reviews \u2192",
     price_vat_disclaimer:"Athletes and end customers usually buy incl. VAT. Physiotherapists, clinics and sports organizations can purchase on a company ID.",
-    cuff_title:"Choose 3 wraps", cuff_selected:"Selected", cuff_summary_label:"Your set",
+    cuff_title:"Choose your wrap", cuff_selected:"Selected", cuff_summary_label:"Your set",
     founder_label:"Who is behind the distribution", founder_name:"Jan Tichý", founder_role:"Boston University student · project founder", founder_p1:"After his own spinal surgery in Boston, Jan saw first-hand how important a role Squid Go can play in post-operative care and rehabilitation. He used the technology himself during his recovery and experienced its benefits directly. That is what motivated him to help make this innovative technology available to other patients — both in post-operative care and in prevention.", founder_p2:"Thanks to the collaboration with manager Jiří Pavlíček and his contacts, Squid Go was brought to Central Europe and its distribution launched. The shared goal is to make this technology available to physiotherapists, medical facilities and sports teams in the Czech Republic and other Central European countries.",
-    b2b_label:"For clinics and teams", b2b_title:"Packages for practices and organizations", b2b_sub:"Equip your whole facility at preferential terms. All prices include VAT.",
+    b2b_label:"For clubs, hospitals and clinics", b2b_title:"Custom package", b2b_sub:"Need more units? Answer 7 short questions and we will prepare a package tailored to your facility.",
     pkg_start_name:"START", pkg_start_units:"3× Squid Go", pkg_start_for:"For smaller practices and clinics", pkg_start_cta:"Get START",
     pkg_top_name:"TOP", pkg_top_units:"5× Squid Go", pkg_top_badge:"MOST POPULAR", pkg_top_cta:"Get TOP",
     pkg_vip_name:"VIP", pkg_vip_units:"7× Squid Go", pkg_vip_parts:"7 anatomical wraps", pkg_vip_gels:"14× gel pack", pkg_vip_for:"For rehab centres and professional teams", pkg_vip_cta:"Get VIP",
@@ -2349,7 +2339,7 @@ function renderCuffGrid(){
   grid.innerHTML = '';
   CUFFS.forEach(function(key){
     var sel = selectedCuffs.indexOf(key) !== -1;
-    var full = selectedCuffs.length >= 3 && !sel;
+    var full = false;
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'cuff-opt' + (sel?' selected':'') + (full?' disabled':'');
@@ -2359,10 +2349,10 @@ function renderCuffGrid(){
   });
 }
 function toggleCuff(key){
-  // Výběr až 3 manžet
+  // Výběr 1 manžety (klik na jinou výběr vymění)
   var i = selectedCuffs.indexOf(key);
   if(i !== -1){ selectedCuffs.splice(i,1); }
-  else { if(selectedCuffs.length >= 3) return; selectedCuffs.push(key); }
+  else { selectedCuffs = [key]; }
   updateCuffUI();
 }
 function updateCuffUI(){
@@ -2400,8 +2390,8 @@ function updateCuffUI(){
   var cta = document.getElementById('cuff-cta');
   if(cta){
     var chosen = selectedCuffs.map(function(k){return lbls[k];}).join(', ');
-    var body = 'Mam zajem o Starter Pack Squid Go (35 000 Kc vcetne DPH).';
-    if(selectedCuffs.length) body += ' Vybrane manzety: ' + chosen + '.';
+    var body = 'Mam zajem o Squid Go - 1 pumpa, 1 manzeta, 1 gel pack (25 000 Kc vcetne DPH).';
+    if(selectedCuffs.length) body += ' Vybrana manzeta: ' + chosen + '.';
     cta.href = 'mailto:jan.tichy_ext@aspironix.com?subject=' + encodeURIComponent('Squid Go - nabidka') + '&body=' + encodeURIComponent(body);
   }
 }
@@ -2576,6 +2566,260 @@ initCookies();
   var ad = AUDIENCE_DATA[currentLang] || AUDIENCE_DATA.cs;
   updateAudienceContent(currentAudTab, ad[currentAudTab]);
 })();
+</script>
+<script>
+/* ===== BALÍČEK NA MÍRU — konfigurátor poptávky (kluby / nemocnice / fyzio kliniky) ===== */
+var CFG_EMAIL = 'jan.tichy_ext@aspironix.com';
+var CFG = {
+cs:{
+  ui:{step:'Krok', of:'z', back:'Zpět', next:'Pokračovat', multi:'Můžete vybrat více možností.', single:'Vyberte jednu možnost.',
+      contactQ:'Komu máme poslat návrh balíčku?', name:'Jméno a příjmení *', org:'Organizace / klub *', email:'E-mail *', phone:'Telefon', note:'Poznámka (nepovinné)',
+      consent:'Seznámil/a jsem se se <a href="#" onclick="openLegal(\'privacy\');return false;">Zásadami ochrany osobních údajů</a>. *',
+      summary:'Vaše odpovědi', send:'Odeslat poptávku', err:'Vyplňte prosím povinná pole (*) a potvrďte souhlas.',
+      thanksT:'Děkujeme za poptávku.', thanksP:'Otevřel se váš e-mailový program s připraveným souhrnem — stačí zprávu odeslat. Ozveme se vám s návrhem balíčku.',
+      restart:'Vyplnit znovu', subject:'Squid Go - balicek na miru', mailHead:'Poptávka: balíček Squid Go na míru', typeL:'Typ zákazníka', contactL:'Kontakt'},
+  seg:{q:'Pro koho balíček skládáte?', opts:[
+      {t:'Sportovní klub', d:'Profesionální, poloprofesionální i mládežnický'},
+      {t:'Nemocnice', d:'Ortopedie, traumatologie, rehabilitace'},
+      {t:'Fyzioterapeutická klinika', d:'Soukromá praxe nebo rehabilitační centrum'}]},
+  club:[
+    {q:'Jaký sport?', o:['Fotbal','Lední hokej','Basketbal','Volejbal','Házená','Florbal','Tenis','Atletika / běh','Jiný sport']},
+    {q:'Na jaké úrovni hrajete?', o:['Profesionální soutěž','Poloprofesionální / nižší soutěž','Mládež / akademie','Amatérský klub']},
+    {q:'Kolik hráčů máte v kádru?', o:['Do 15','16–25','26–40','Více než 40 (více týmů)']},
+    {q:'Které oblasti těla u hráčů nejčastěji řešíte?', m:1, o:['Koleno / noha','Kotník','Záda','Rameno','Loket','Zápěstí']},
+    {q:'Kde budete Squid Go používat?', m:1, o:['V kabině / šatně','Na cestách a v autobusu','Na soustředění','U hráčů doma','Ve fyzioterapii klubu']},
+    {q:'Kolik jednotek (pump) zhruba potřebujete?', o:['1–2','3–5','6–10','Více než 10','Zatím nevím — poraďte']}],
+  hospital:[
+    {q:'Kolik operací TEP kolene (totální endoprotéza) ročně provádíte?', o:['Do 100','100–300','301–600','Více než 600','TEP kolene neprovádíme']},
+    {q:'Jaké další ortopedické výkony provádíte?', m:1, o:['TEP kyčle','Artroskopie kolene','Rekonstrukce předního zkříženého vazu','Operace ramene','Operace hlezna / kotníku','Operace páteře']},
+    {q:'Kde by se Squid Go používal?', m:1, o:['Lůžkové oddělení po operaci','Rehabilitace','Ambulance','Zapůjčení pacientům domů']},
+    {q:'Kolik lůžek má ortopedické / rehabilitační oddělení?', o:['Do 20','20–40','41–80','Více než 80']},
+    {q:'Kolik pacientů potřebujete ošetřit současně?', o:['1–3','4–10','11–20','Více než 20']},
+    {q:'Jak u vás probíhá nákup?', o:['Přímý nákup','Výběrové řízení / tendr','Nejdřív chceme pilotní test','Zatím nevím']}],
+  physio:[
+    {q:'Kolik fyzioterapeutů u vás pracuje?', o:['1','2–5','6–10','Více než 10']},
+    {q:'Kolik pacientů týdně ošetříte?', o:['Do 50','50–150','151–300','Více než 300']},
+    {q:'S jakými pacienty nejčastěji pracujete?', m:1, o:['Pooperační péče (koleno, kyčel)','Sportovní zranění','Výkonnostní sportovci','Chronické potíže','Senioři']},
+    {q:'Které oblasti těla nejčastěji ošetřujete?', m:1, o:['Koleno / noha','Kotník','Záda','Rameno','Loket','Zápěstí']},
+    {q:'Chcete jednotky zapůjčovat i pacientům domů?', o:['Ano','Možná','Ne']},
+    {q:'Kolik jednotek zhruba potřebujete?', o:['1','2–3','4–6','7 a více','Zatím nevím — poraďte']}]
+},
+sk:{
+  ui:{step:'Krok', of:'z', back:'Späť', next:'Pokračovať', multi:'Môžete vybrať viac možností.', single:'Vyberte jednu možnosť.',
+      contactQ:'Komu máme poslať návrh balíčka?', name:'Meno a priezvisko *', org:'Organizácia / klub *', email:'E-mail *', phone:'Telefón', note:'Poznámka (nepovinné)',
+      consent:'Oboznámil/a som sa so <a href="#" onclick="openLegal(\'privacy\');return false;">Zásadami ochrany osobných údajov</a>. *',
+      summary:'Vaše odpovede', send:'Odoslať dopyt', err:'Vyplňte prosím povinné polia (*) a potvrďte súhlas.',
+      thanksT:'Ďakujeme za dopyt.', thanksP:'Otvoril sa váš e-mailový program s pripraveným súhrnom — stačí správu odoslať. Ozveme sa vám s návrhom balíčka.',
+      restart:'Vyplniť znova', subject:'Squid Go - balicek na mieru', mailHead:'Dopyt: balíček Squid Go na mieru', typeL:'Typ zákazníka', contactL:'Kontakt'},
+  seg:{q:'Pre koho balíček skladáte?', opts:[
+      {t:'Športový klub', d:'Profesionálny, poloprofesionálny aj mládežnícky'},
+      {t:'Nemocnica', d:'Ortopédia, traumatológia, rehabilitácia'},
+      {t:'Fyzioterapeutická klinika', d:'Súkromná prax alebo rehabilitačné centrum'}]},
+  club:[
+    {q:'Aký šport?', o:['Futbal','Ľadový hokej','Basketbal','Volejbal','Hádzaná','Florbal','Tenis','Atletika / beh','Iný šport']},
+    {q:'Na akej úrovni hráte?', o:['Profesionálna súťaž','Poloprofesionálna / nižšia súťaž','Mládež / akadémia','Amatérsky klub']},
+    {q:'Koľko hráčov máte v kádri?', o:['Do 15','16–25','26–40','Viac ako 40 (viac tímov)']},
+    {q:'Ktoré oblasti tela u hráčov najčastejšie riešite?', m:1, o:['Koleno / noha','Členok','Chrbát','Rameno','Lakeť','Zápästie']},
+    {q:'Kde budete Squid Go používať?', m:1, o:['V kabíne / šatni','Na cestách a v autobuse','Na sústredení','U hráčov doma','Vo fyzioterapii klubu']},
+    {q:'Koľko jednotiek (púmp) približne potrebujete?', o:['1–2','3–5','6–10','Viac ako 10','Zatiaľ neviem — poraďte']}],
+  hospital:[
+    {q:'Koľko operácií TEP kolena (totálna endoprotéza) ročne vykonávate?', o:['Do 100','100–300','301–600','Viac ako 600','TEP kolena nevykonávame']},
+    {q:'Aké ďalšie ortopedické výkony vykonávate?', m:1, o:['TEP bedrového kĺbu','Artroskopia kolena','Rekonštrukcia predného skríženého väzu','Operácie ramena','Operácie členka','Operácie chrbtice']},
+    {q:'Kde by sa Squid Go používal?', m:1, o:['Lôžkové oddelenie po operácii','Rehabilitácia','Ambulancia','Zapožičanie pacientom domov']},
+    {q:'Koľko lôžok má ortopedické / rehabilitačné oddelenie?', o:['Do 20','20–40','41–80','Viac ako 80']},
+    {q:'Koľko pacientov potrebujete ošetriť súčasne?', o:['1–3','4–10','11–20','Viac ako 20']},
+    {q:'Ako u vás prebieha nákup?', o:['Priamy nákup','Verejné obstarávanie / tender','Najprv chceme pilotný test','Zatiaľ neviem']}],
+  physio:[
+    {q:'Koľko fyzioterapeutov u vás pracuje?', o:['1','2–5','6–10','Viac ako 10']},
+    {q:'Koľko pacientov týždenne ošetríte?', o:['Do 50','50–150','151–300','Viac ako 300']},
+    {q:'S akými pacientmi najčastejšie pracujete?', m:1, o:['Pooperačná starostlivosť (koleno, bedro)','Športové zranenia','Výkonnostní športovci','Chronické ťažkosti','Seniori']},
+    {q:'Ktoré oblasti tela najčastejšie ošetrujete?', m:1, o:['Koleno / noha','Členok','Chrbát','Rameno','Lakeť','Zápästie']},
+    {q:'Chcete jednotky požičiavať aj pacientom domov?', o:['Áno','Možno','Nie']},
+    {q:'Koľko jednotiek približne potrebujete?', o:['1','2–3','4–6','7 a viac','Zatiaľ neviem — poraďte']}]
+},
+pl:{
+  ui:{step:'Krok', of:'z', back:'Wstecz', next:'Dalej', multi:'Możesz wybrać kilka odpowiedzi.', single:'Wybierz jedną odpowiedź.',
+      contactQ:'Komu mamy wysłać propozycję pakietu?', name:'Imię i nazwisko *', org:'Organizacja / klub *', email:'E-mail *', phone:'Telefon', note:'Uwagi (opcjonalnie)',
+      consent:'Zapoznałem/am się z <a href="#" onclick="openLegal(\'privacy\');return false;">Polityką prywatności</a>. *',
+      summary:'Twoje odpowiedzi', send:'Wyślij zapytanie', err:'Uzupełnij wymagane pola (*) i potwierdź zgodę.',
+      thanksT:'Dziękujemy za zapytanie.', thanksP:'Otworzył się Twój program pocztowy z gotowym podsumowaniem — wystarczy wysłać wiadomość. Odezwiemy się z propozycją pakietu.',
+      restart:'Wypełnij ponownie', subject:'Squid Go - pakiet na miare', mailHead:'Zapytanie: pakiet Squid Go na miarę', typeL:'Typ klienta', contactL:'Kontakt'},
+  seg:{q:'Dla kogo składasz pakiet?', opts:[
+      {t:'Klub sportowy', d:'Profesjonalny, półprofesjonalny i młodzieżowy'},
+      {t:'Szpital', d:'Ortopedia, traumatologia, rehabilitacja'},
+      {t:'Klinika fizjoterapii', d:'Prywatny gabinet lub centrum rehabilitacji'}]},
+  club:[
+    {q:'Jaki sport?', o:['Piłka nożna','Hokej na lodzie','Koszykówka','Siatkówka','Piłka ręczna','Unihokej','Tenis','Lekkoatletyka / bieganie','Inny sport']},
+    {q:'Na jakim poziomie gracie?', o:['Rozgrywki profesjonalne','Półprofesjonalne / niższa liga','Młodzież / akademia','Klub amatorski']},
+    {q:'Ilu zawodników macie w kadrze?', o:['Do 15','16–25','26–40','Ponad 40 (kilka drużyn)']},
+    {q:'Które obszary ciała u zawodników najczęściej wymagają pracy?', m:1, o:['Kolano / noga','Kostka','Plecy','Ramię','Łokieć','Nadgarstek']},
+    {q:'Gdzie będziecie używać Squid Go?', m:1, o:['W szatni','W podróży i w autobusie','Na obozie','U zawodników w domu','W fizjoterapii klubu']},
+    {q:'Ilu jednostek (pomp) mniej więcej potrzebujecie?', o:['1–2','3–5','6–10','Ponad 10','Jeszcze nie wiem — doradźcie']}],
+  hospital:[
+    {q:'Ile operacji endoprotezoplastyki kolana (TEP) wykonujecie rocznie?', o:['Do 100','100–300','301–600','Ponad 600','Nie wykonujemy']},
+    {q:'Jakie inne zabiegi ortopedyczne wykonujecie?', m:1, o:['Endoprotezoplastyka biodra','Artroskopia kolana','Rekonstrukcja więzadła krzyżowego przedniego','Operacje barku','Operacje stawu skokowego','Operacje kręgosłupa']},
+    {q:'Gdzie byłby używany Squid Go?', m:1, o:['Oddział szpitalny po operacji','Rehabilitacja','Poradnia / ambulatorium','Wypożyczanie pacjentom do domu']},
+    {q:'Ile łóżek ma oddział ortopedyczny / rehabilitacyjny?', o:['Do 20','20–40','41–80','Ponad 80']},
+    {q:'Ilu pacjentów musicie leczyć jednocześnie?', o:['1–3','4–10','11–20','Ponad 20']},
+    {q:'Jak u was wygląda zakup?', o:['Zakup bezpośredni','Przetarg','Najpierw chcemy test pilotażowy','Jeszcze nie wiem']}],
+  physio:[
+    {q:'Ilu fizjoterapeutów u was pracuje?', o:['1','2–5','6–10','Ponad 10']},
+    {q:'Ilu pacjentów przyjmujecie tygodniowo?', o:['Do 50','50–150','151–300','Ponad 300']},
+    {q:'Z jakimi pacjentami najczęściej pracujecie?', m:1, o:['Opieka pooperacyjna (kolano, biodro)','Urazy sportowe','Sportowcy wyczynowi','Dolegliwości przewlekłe','Seniorzy']},
+    {q:'Które obszary ciała najczęściej leczycie?', m:1, o:['Kolano / noga','Kostka','Plecy','Ramię','Łokieć','Nadgarstek']},
+    {q:'Czy chcecie wypożyczać jednostki pacjentom do domu?', o:['Tak','Może','Nie']},
+    {q:'Ilu jednostek mniej więcej potrzebujecie?', o:['1','2–3','4–6','7 i więcej','Jeszcze nie wiem — doradźcie']}]
+},
+en:{
+  ui:{step:'Step', of:'of', back:'Back', next:'Continue', multi:'You can choose more than one.', single:'Choose one option.',
+      contactQ:'Where should we send the package proposal?', name:'Full name *', org:'Organization / club *', email:'E-mail *', phone:'Phone', note:'Note (optional)',
+      consent:'I have read the <a href="#" onclick="openLegal(\'privacy\');return false;">Privacy Policy</a>. *',
+      summary:'Your answers', send:'Send request', err:'Please fill in the required fields (*) and confirm the consent.',
+      thanksT:'Thank you for your request.', thanksP:'Your e-mail program has opened with a prepared summary — just send the message. We will get back to you with a package proposal.',
+      restart:'Start again', subject:'Squid Go - custom package', mailHead:'Request: custom Squid Go package', typeL:'Customer type', contactL:'Contact'},
+  seg:{q:'Who are you building the package for?', opts:[
+      {t:'Sports club', d:'Professional, semi-professional and youth'},
+      {t:'Hospital', d:'Orthopaedics, trauma, rehabilitation'},
+      {t:'Physiotherapy clinic', d:'Private practice or rehab centre'}]},
+  club:[
+    {q:'Which sport?', o:['Football','Ice hockey','Basketball','Volleyball','Handball','Floorball','Tennis','Athletics / running','Other sport']},
+    {q:'At what level do you play?', o:['Professional league','Semi-professional / lower league','Youth / academy','Amateur club']},
+    {q:'How many players are in your squad?', o:['Up to 15','16–25','26–40','More than 40 (several teams)']},
+    {q:'Which body areas do your players deal with most often?', m:1, o:['Knee / leg','Ankle','Back','Shoulder','Elbow','Wrist']},
+    {q:'Where will you use Squid Go?', m:1, o:['In the locker room','Travelling / on the bus','At training camps','At players’ homes','In the club’s physio room']},
+    {q:'Roughly how many units (pumps) do you need?', o:['1–2','3–5','6–10','More than 10','Not sure yet — advise us']}],
+  hospital:[
+    {q:'How many total knee replacements (TKA) do you perform per year?', o:['Up to 100','100–300','301–600','More than 600','We don’t perform TKA']},
+    {q:'Which other orthopaedic procedures do you perform?', m:1, o:['Total hip replacement','Knee arthroscopy','ACL reconstruction','Shoulder surgery','Ankle surgery','Spine surgery']},
+    {q:'Where would Squid Go be used?', m:1, o:['Post-operative ward','Rehabilitation','Outpatient clinic','Loaned to patients at home']},
+    {q:'How many beds does the orthopaedic / rehab ward have?', o:['Up to 20','20–40','41–80','More than 80']},
+    {q:'How many patients do you need to treat at the same time?', o:['1–3','4–10','11–20','More than 20']},
+    {q:'How does purchasing work for you?', o:['Direct purchase','Public tender','We’d like a pilot test first','Not sure yet']}],
+  physio:[
+    {q:'How many physiotherapists work at your clinic?', o:['1','2–5','6–10','More than 10']},
+    {q:'How many patients do you see per week?', o:['Up to 50','50–150','151–300','More than 300']},
+    {q:'Which patients do you work with most often?', m:1, o:['Post-operative care (knee, hip)','Sports injuries','Competitive athletes','Chronic conditions','Seniors']},
+    {q:'Which body areas do you treat most often?', m:1, o:['Knee / leg','Ankle','Back','Shoulder','Elbow','Wrist']},
+    {q:'Do you also want to lend units to patients for home use?', o:['Yes','Maybe','No']},
+    {q:'Roughly how many units do you need?', o:['1','2–3','4–6','7 or more','Not sure yet — advise us']}]
+}
+};
+var CFG_SEGS = ['club','hospital','physio'];
+var cfgState = {step:0, seg:null, ans:{}, contact:{}, done:false};
+
+function cfgL(){ return CFG[typeof currentLang!=='undefined' && CFG[currentLang] ? currentLang : 'cs']; }
+function cfgEsc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function cfgQuestions(){ return cfgState.seg ? cfgL()[cfgState.seg] : []; }
+function cfgTotal(){ return 1 + 6 + 1; }
+
+function cfgAnswered(){
+  if(cfgState.step === 0) return cfgState.seg !== null;
+  var a = cfgState.ans[cfgState.step]; return a && a.length > 0;
+}
+
+function cfgRender(){
+  var body = document.getElementById('cfgBody'); if(!body) return;
+  var L = cfgL(), U = L.ui, s = cfgState.step, total = cfgTotal();
+  var bar = document.getElementById('cfgBar'), meta = document.getElementById('cfgMeta');
+  var back = document.getElementById('cfgBack'), next = document.getElementById('cfgNext');
+  if(cfgState.done){
+    bar.style.width = '100%'; meta.textContent = '';
+    body.innerHTML = '<div class="cfg-thanks"><div class="nf-thanks-ico"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><h3>'+U.thanksT+'</h3><p>'+U.thanksP+'</p></div>';
+    back.hidden = true; next.hidden = false; next.textContent = U.restart; return;
+  }
+  bar.style.width = Math.round((s+1)/total*100) + '%';
+  meta.textContent = U.step + ' ' + (s+1) + ' ' + U.of + ' ' + total;
+  back.hidden = (s === 0); back.textContent = U.back; next.hidden = false;
+  var html = '';
+  if(s === 0){
+    html += '<h3 class="cfg-q">'+L.seg.q+'</h3><div class="cfg-segs">';
+    L.seg.opts.forEach(function(o, i){
+      html += '<button type="button" class="cfg-seg'+(cfgState.seg===CFG_SEGS[i]?' selected':'')+'" onclick="cfgPickSeg('+i+')"><strong>'+o.t+'</strong><span>'+o.d+'</span></button>';
+    });
+    html += '</div>';
+    next.textContent = U.next;
+  } else if(s <= 6){
+    var q = cfgQuestions()[s-1], sel = cfgState.ans[s] || [];
+    html += '<div class="cfg-tag">'+L.seg.opts[CFG_SEGS.indexOf(cfgState.seg)].t+'</div>';
+    html += '<h3 class="cfg-q">'+q.q+'</h3><p class="cfg-hint">'+(q.m?U.multi:U.single)+'</p><div class="cfg-opts">';
+    q.o.forEach(function(o, i){
+      html += '<button type="button" class="cfg-opt'+(sel.indexOf(i)!==-1?' selected':'')+(q.m?' multi':'')+'" onclick="cfgPick('+i+')">'+o+'</button>';
+    });
+    html += '</div>';
+    next.textContent = U.next;
+  } else {
+    var c = cfgState.contact;
+    html += '<h3 class="cfg-q">'+U.contactQ+'</h3><div class="cfg-contact"><div class="cfg-fields">';
+    [['name','text'],['org','text'],['email','email'],['phone','tel']].forEach(function(f){
+      html += '<label class="nf-field"><span>'+U[f[0]]+'</span><input type="'+f[1]+'" data-cf="'+f[0]+'" value="'+cfgEsc(c[f[0]]||'')+'"></label>';
+    });
+    html += '<label class="nf-field full"><span>'+U.note+'</span><textarea data-cf="note" rows="3">'+cfgEsc(c.note||'')+'</textarea></label>';
+    html += '<label class="cfg-consent"><input type="checkbox" data-cf="consent"'+(c.consent?' checked':'')+'><span>'+U.consent+'</span></label>';
+    html += '<p class="cfg-err" id="cfgErr">'+U.err+'</p></div>';
+    html += '<div class="cfg-summary"><div class="cfg-summary-label">'+U.summary+'</div><ul>'+cfgSummaryLines().map(function(l){ return '<li><span>'+l[0]+'</span><strong>'+l[1]+'</strong></li>'; }).join('')+'</ul></div></div>';
+    next.textContent = U.send;
+  }
+  body.innerHTML = html;
+  body.querySelectorAll('[data-cf]').forEach(function(el){
+    el.addEventListener('input', function(){ cfgState.contact[el.getAttribute('data-cf')] = el.type==='checkbox' ? el.checked : el.value; });
+    el.addEventListener('change', function(){ cfgState.contact[el.getAttribute('data-cf')] = el.type==='checkbox' ? el.checked : el.value; });
+  });
+  next.disabled = (s <= 6 && !cfgAnswered());
+}
+
+function cfgSummaryLines(){
+  var L = cfgL(), lines = [];
+  if(cfgState.seg) lines.push([L.ui.typeL, L.seg.opts[CFG_SEGS.indexOf(cfgState.seg)].t]);
+  cfgQuestions().forEach(function(q, i){
+    var a = cfgState.ans[i+1] || [];
+    if(a.length) lines.push([q.q, a.map(function(k){ return q.o[k]; }).join(', ')]);
+  });
+  return lines;
+}
+function cfgPickSeg(i){
+  var seg = CFG_SEGS[i];
+  if(cfgState.seg !== seg){ cfgState.seg = seg; cfgState.ans = {}; }
+  cfgRender();
+  setTimeout(function(){ cfgGo(1); }, 220);
+}
+function cfgPick(i){
+  var s = cfgState.step, q = cfgQuestions()[s-1], a = cfgState.ans[s] || [];
+  if(q.m){ var k = a.indexOf(i); if(k===-1) a.push(i); else a.splice(k,1); a.sort(function(x,y){return x-y;}); cfgState.ans[s] = a; cfgRender(); }
+  else { cfgState.ans[s] = [i]; cfgRender(); setTimeout(function(){ cfgGo(1); }, 220); }
+}
+function cfgGo(d){
+  if(cfgState.done){ cfgState = {step:0, seg:null, ans:{}, contact:{}, done:false}; cfgRender(); return; }
+  var s = cfgState.step;
+  if(d > 0 && s <= 6 && !cfgAnswered()) return;
+  if(d > 0 && s === 7){ cfgSend(); return; }
+  cfgState.step = Math.max(0, Math.min(7, s + d));
+  cfgRender();
+  var box = document.getElementById('cfg');
+  if(box && box.getBoundingClientRect().top < 70) box.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function cfgSend(){
+  var c = cfgState.contact, U = cfgL().ui, err = document.getElementById('cfgErr');
+  var ok = c.name && c.org && c.email && /\S+@\S+\.\S+/.test(c.email) && c.consent;
+  if(!ok){ if(err) err.style.display = 'block'; return; }
+  var lines = [U.mailHead, ''];
+  cfgSummaryLines().forEach(function(l){ lines.push(l[0] + ': ' + l[1]); });
+  lines.push('', U.contactL + ':', c.name, c.org, c.email);
+  if(c.phone) lines.push(c.phone);
+  if(c.note) lines.push('', c.note);
+  window.location.href = 'mailto:' + CFG_EMAIL + '?subject=' + encodeURIComponent(U.subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  cfgState.done = true; cfgRender();
+}
+(function(){
+  var back = document.getElementById('cfgBack'), next = document.getElementById('cfgNext');
+  if(back) back.onclick = function(){ cfgGo(-1); };
+  if(next) next.onclick = function(){ cfgGo(1); };
+  if(typeof setLang === 'function'){
+    var baseSetLang = setLang;
+    window.setLang = function(l){ baseSetLang(l); cfgRender(); };
+  }
+  cfgRender();
+})();
+
 </script>
 </body>
 </html>
